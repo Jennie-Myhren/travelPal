@@ -1,0 +1,23 @@
+{
+  "name": "travelpal",
+  "version": "1.0.0",
+  "description": "ReactNative app that allows you to make, take and share tours of a city.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jennie-Myhren/travelPal.git"
+  },
+  "author": "Jennie Myhren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jennie-Myhren/travelPal/issues"
+  },
+  "homepage": "https://github.com/Jennie-Myhren/travelPal#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
