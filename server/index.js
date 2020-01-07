@@ -5,7 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 //any passport, session, db TK
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 1234;
 module.exports = app;
 
 //global Mocha hook for resource cleanup TK
@@ -33,9 +33,9 @@ const createApp = () => {
   app.use('/api', require('./api'));
 
   // static file-serving middleware
-  app.use(express.static(path.join(__dirname, '..', 'public')));
+  app.use(express.static(path.join(__dirname, '..', 'dist')));
 
-  // send 404 for other requests w/ an extension (.js, .css, ..)
+  // send 404 for other reqs w/ an extension (.js, .css)
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
       const err = new Error('Not found');
@@ -48,7 +48,7 @@ const createApp = () => {
 
   // send index.html
   app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+    res.sendFile(path.join(__dirname, '..', 'dist/index.html'));
   });
 
   // error handling endware
